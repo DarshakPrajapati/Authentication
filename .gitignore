@@ -4,3 +4,5 @@
 
 /.vs
 /Authentication/obj
+/Authentication/bin/Debug/net7.0
+/Authentication/Authentication.csproj.user
