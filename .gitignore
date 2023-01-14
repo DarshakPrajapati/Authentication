@@ -6,3 +6,6 @@
 /Authentication/obj
 /Authentication/bin/Debug/net7.0
 /Authentication/Authentication.csproj.user
+/Model/bin/Debug/net7.0
+/Model/obj/Debug/net7.0
+/Model/obj
