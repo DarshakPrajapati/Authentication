@@ -27,13 +27,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         var key = Encoding.ASCII.GetBytes(builder.Configuration["JWTConfig:key"]);
+        var issuer = builder.Configuration["JWTConfig:Issuer"];
+        var audience = builder.Configuration["JWTConfig:Audience"];
         options.TokenValidationParameters = new TokenValidationParameters()
         {
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(key),
-            ValidateIssuer = false,
-            ValidateAudience = false,
+            ValidateIssuer = true,
+            ValidateAudience = true,
             RequireExpirationTime = true,
+            ValidIssuer = issuer,
+            ValidAudience= audience,
         };
     });
 
